@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Usuari</title>
+    <link href="bootstrap-3/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" href="tictac.ico"/>
+    <style>
+        legend{
+            text-align: center;
+            font-size: 30px;
+        }
+        .btn{
+            width: 150px;
+        }
+        h1, h3{
+            text-align: center;
+        }
+        input::placeholder{
+            background-color: #ffffbf;
+            font-style: oblique;
+            color: #f89191;
+        }
+    </style>
+  </head>
+  <body>
+      <br/>
+      <div class="container">
+          <div class="row">
+            <button class="btn btn-primary" onclick="history.back()" >Enrere</button>
+          </div>
+          <br/>
+          <legend>Dades de jugador:</legend>
+          <form action="on envio" name="jugador" id="jugador" method="post">
+              <div class="row">
+                  <div class="col-xs-2"><label>Nom:</label></div>
+                  <div class="col-xs-2">
+                      <input type="text" placeholder="Escriu el teu nom">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-2"><label>Cognoms:</label></div>
+                  <div class="col-xs-1">
+                      <input type="text" placeholder="Escriu el teu cognom">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-2"><label>Edat:</label></div>
+                  <div class="col-xs-1">
+                      <input type="number" min="3" max="102" placeholder="Escriu l'edat">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-2"><label>NIF:</label></div>
+                  <div class="col-xs-1">
+                      <input type="text" placeholder="Escriu el NIF">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-2"><label>Email:</label></div>
+                  <div class="col-xs-1">
+                      <input type="email" placeholder="Escriu un email valid">
+                  </div>
+              </div>
+              <br/>
+              <div class="row">
+                  <div class="col-xs-3">
+                    <input type="reset" class="btn btn-danger" value="Borrar">
+                  </div>
+                  <div class="col-xs-6"></div>
+                  <div class="col-xs-3">
+                    <input type="submit" class="btn btn-success" value="Enviar">
+                  </div>
+              </div>
+          </form>
+      </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="bootstrap-3/js/bootstrap.min.js"></script>
+  </body>
+</html>
