@@ -16,12 +16,13 @@
                     <button class="btn btn-primary" onclick="history.back()" >Enrere</button>
                 </div>
                 <br/>
+                <legend><h1><b>Informació</b></h1></legend>
                 <div class="row">
                     <div class="col-xs-1"></div>
-                    <div class="col-xs-10">
+                    <div class="col-xs-11">
                     <script>
-                        document.write('<p><b>Nom del navegador: </b>'+bowser.name+'</p>');
-                        document.write('<p><b>Versio del navegador: </b><i>'+bowser.version+'</i></p>');
+                        document.write('<h3><b>Nom del navegador: </b>'+bowser.name+'</h3>');
+                        document.write('<h3><b>Versio del navegador: </b><i>'+bowser.version+'</i></h3>');
                         var OSName="Desconocido";
                         if (navigator.appVersion.indexOf("Win")!=-1){
                             OSName="Windows";
@@ -34,14 +35,14 @@
                         }else if (navigator.appVersion.indexOf("Android")!=-1){
                             OSName="Android";
                         }
-                        document.write('<p><b>El teu sistema operatiu es: </b>'+OSName+'</p>');
-                        document.write('<p><b>El teu idioma es: </b>'+window.navigator.language+'</p>');
-                        document.write('<p><b>El teu hostname es: </b>'+window.location.href+'</p>');
-                        document.write('<p><b>La darrera modificacio del document es va produir: </b><i>'+document.lastModified+'</i></p>');
-                        document.writeln('<p><b>Resolucio de la pantalla: </b><i>'+screen.width + "</i> x <i>" + screen.height+'</i></p>');
+                        document.write('<h3><b>El teu sistema operatiu es: </b>'+OSName+'</h3>');
+                        document.write('<h3><b>El teu idioma es: </b>'+window.navigator.language+'</h3>');
+                        document.write('<h3><b>El teu hostname es: </b>'+window.location.href+'</h3>');
+                        document.write('<h3><b>La darrera modificacio del document es va produir: </b><i>'+document.lastModified+'</i></h3>');
+                        document.writeln('<h3><b>Resolucio de la pantalla: </b><i>'+screen.width + "</i> x <i>" + screen.height+'</i></h3>');
                     </script>
                     </div>
-                    <div class="col-xs-1"></div>
+
                 </div>
 			</div>
 	</body>
