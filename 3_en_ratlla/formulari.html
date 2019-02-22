@@ -15,7 +15,7 @@
         .btn{
             width: 150px;
         }
-        h1, h3{
+        h1, h2{
             text-align: center;
         }
         input::placeholder{
@@ -32,49 +32,152 @@
             <button class="btn btn-primary" onclick="history.back()" >Enrere</button>
           </div>
           <br/>
-          <legend>Dades de jugador:</legend>
-          <form action="on envio" name="jugador" id="jugador" method="post">
+          <legend><b>Dades dels jugadors:</b></legend>
+          <form action="joc.html" name="jugadors" id="jugadors" method="get">
+              <div class="row">
+                  <div class="col-xs-5">
+                      <h2><span class="label label-primary col-xs-12">Jugador 1</span></h2>
+                  </div>
+                  <div class="col-xs-2"></div>
+                  <div class="col-xs-5">
+                      <h2><span class="label label-danger col-xs-12">Jugador 2</span></h2>
+                  </div>
+              </div>
+              <br>
               <div class="row">
                   <div class="col-xs-2"><label>Nom:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" placeholder="Escriu el teu nom">
+                      <input type="text" id="j1nom" placeholder="Escriu el teu nom" required>
+                  </div>
+                  <div class="col-xs-3"></div>
+                  <div class="col-xs-2"><label>Nom:</label></div>
+                  <div class="col-xs-2">
+                      <input type="text" id="j2nom" placeholder="Escriu el teu nom" required>
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Cognoms:</label></div>
-                  <div class="col-xs-1">
-                      <input type="text" placeholder="Escriu el teu cognom">
+                  <div class="col-xs-2">
+                      <input type="text" id="j1cognom" placeholder="Escriu el teu cognom" required>
+                  </div>
+                  <div class="col-xs-3"></div>
+                  <div class="col-xs-2"><label>Cognoms:</label></div>
+                  <div class="col-xs-2">
+                      <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" required>
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Edat:</label></div>
                   <div class="col-xs-1">
-                      <input type="number" min="3" max="102" placeholder="Escriu l'edat">
+                      <input type="number" id="j1edat" min="3" max="102" placeholder="Escriu l'edat" required>
+                  </div>
+                  <div class="col-xs-4"></div>
+                  <div class="col-xs-2"><label>Edat:</label></div>
+                  <div class="col-xs-1">
+                      <input type="number" id="j2edat" min="3" max="102" placeholder="Escriu l'edat" required>
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>NIF:</label></div>
-                  <div class="col-xs-1">
-                      <input type="text" placeholder="Escriu el NIF">
+                  <div class="col-xs-2">
+                      <input type="text" id="j1nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" required>
+                  </div>
+                  <div class="col-xs-3"></div>
+                  <div class="col-xs-2"><label>NIF:</label></div>
+                  <div class="col-xs-2">
+                      <input type="text" id="j2nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" required>
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Email:</label></div>
-                  <div class="col-xs-1">
-                      <input type="email" placeholder="Escriu un email valid">
+                  <div class="col-xs-2">
+                      <input type="email" id="j1email" placeholder="Escriu un email valid" required>
+                  </div>
+                  <div class="col-xs-3"></div>
+                  <div class="col-xs-2"><label>Email:</label></div>
+                  <div class="col-xs-2">
+                      <input type="email" id="j2email" placeholder="Escriu un email valid" required>
                   </div>
               </div>
               <br/>
               <div class="row">
-                  <div class="col-xs-3">
+                  <div class="col-xs-1">
                     <input type="reset" class="btn btn-danger" value="Borrar">
                   </div>
-                  <div class="col-xs-6"></div>
-                  <div class="col-xs-3">
+                  <div class="col-xs-8"></div>
+                  <div class="col-xs-1">
                     <input type="submit" class="btn btn-success" value="Enviar">
                   </div>
               </div>
           </form>
+          <script>
+              /*Posar en sessió*/
+              
+              //Jugador 1
+              //Recollir de pantalla
+              var j1nom = document.getElementById("j1nom");
+              var j1cognom = document.getElementById("j1cognom");
+              var j1edat = Number(document.getElementById("edat"))
+              var j1nif = document.getElementById("j1nif");
+              var j1email = document.getElementById("j1email");
+              //Enviar a sessio
+              sessionStorage.setItem("j1nom",j1nom);
+              sessionStorage.setItem("j1cognom",j1cognom);
+              sessionStorage.setItem("j1edat",j1edat);
+              sessionStorage.setItem("j1nif",j1nif);
+              sessionStorage.setItem("j1email",j1email);
+              
+              //Jugador 2
+              //Recollir de pantalla
+              var j2nom = document.getElementById("j2nom");
+              var j2cognom = document.getElementById("j2cognom");
+              var j2edat = Number(document.getElementById("edat"))
+              var j2nif = document.getElementById("j2nif");
+              var j2email = document.getElementById("j2email");
+              //Enviar a sessio
+              sessionStorage.setItem("j2nom",j2nom);
+              sessionStorage.setItem("j2cognom",j2cognom);
+              sessionStorage.setItem("j2edat",j2edat);
+              sessionStorage.setItem("j2nif",j2nif);
+              sessionStorage.setItem("j2email",j2email);
+              
+              /*--------------------------------------------------------------------------*/
+          function Comprobar(formulario) 
+{   
+var nombreAp=document.getElementById('nom').value;
+var eMail=document.getElementById('email').value;
+var Asunto=document.getElementById('cognom').value;
+var Mensaje=document.getElementById('email').value;
+if (nombreAp.length==0) 
+{
+var errorNombre=document.createElement('p');
+errorNombre.innerHTML= 'No escribiste tu nombre';                   
+document.getElementById("Comentarios").appendChild(errorNombre);
+return false;
+}
+if (eMail.length==0) 
+{
+var erroremail=document.createElement('p');
+erroremail.innerHTML='No escribiste tu email';
+document.getElementById("Comentarios").appendChild(erroremail);
+return false;
+}
+if (Asunto.length==0) 
+{
+var errorAsunto=document.createElement("p");
+errorAsunto.innerHTML='No escribiste el asunto';            document.getElementById("Comentarios").appendChild(errorAsunto);
+return false;
+}
+if (Mensaje.length==0) 
+{   
+var errorMensaje=document.createElement("p");
+errorMensaje.innerHTML='No escribiste el mensaje';
+document.getElementById("Comentarios").appendChild(errorMensaje);   
+return false;
+}
+return true;
+}
+          </script>
       </div>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="bootstrap-3/js/bootstrap.min.js"></script>
