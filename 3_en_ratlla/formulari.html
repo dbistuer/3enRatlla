@@ -47,56 +47,56 @@
               <div class="row">
                   <div class="col-xs-2"><label>Nom:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j1nom" placeholder="Escriu el teu nom" required>
+                      <input type="text" id="j1nom" placeholder="Escriu el teu nom" "required" >
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>Nom:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j2nom" placeholder="Escriu el teu nom" required>
+                      <input type="text" id="j2nom" placeholder="Escriu el teu nom" "required" >
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Cognoms:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j1cognom" placeholder="Escriu el teu cognom" required>
+                      <input type="text" id="j1cognom" placeholder="Escriu el teu cognom" "required" >
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>Cognoms:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" required>
+                      <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" "required" >
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Edat:</label></div>
                   <div class="col-xs-1">
-                      <input type="number" id="j1edat" min="3" max="102" placeholder="Escriu l'edat" required>
+                      <input type="number" id="j1edat" min="3" max="102" placeholder="Escriu l'edat" "required" >
                   </div>
                   <div class="col-xs-4"></div>
                   <div class="col-xs-2"><label>Edat:</label></div>
                   <div class="col-xs-1">
-                      <input type="number" id="j2edat" min="3" max="102" placeholder="Escriu l'edat" required>
+                      <input type="number" id="j2edat" min="3" max="102" placeholder="Escriu l'edat" "required" >
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>NIF:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j1nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" required>
+                      <input type="text" id="j1nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" "required" >
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>NIF:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j2nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" required>
+                      <input type="text" id="j2nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" "required" >
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Email:</label></div>
                   <div class="col-xs-2">
-                      <input type="email" id="j1email" placeholder="Escriu un email valid" required>
+                      <input type="email" id="j1email" placeholder="Escriu un email valid" "required" >
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>Email:</label></div>
                   <div class="col-xs-2">
-                      <input type="email" id="j2email" placeholder="Escriu un email valid" required>
+                      <input type="email" id="j2email" placeholder="Escriu un email valid" "required" >
                   </div>
               </div>
               <br/>
@@ -106,40 +106,44 @@
                   </div>
                   <div class="col-xs-8"></div>
                   <div class="col-xs-1">
-                    <input type="submit" class="btn btn-success" value="Enviar">
+                    <input type="submit" class="btn btn-success" value="Enviar" onclick="desarDades()">
                   </div>
               </div>
           </form>
           <script>
-              /*Posar en sessió*/
               
-              //Jugador 1
-              //Recollir de pantalla
-              var j1nom = document.getElementById("j1nom");
-              var j1cognom = document.getElementById("j1cognom");
-              var j1edat = Number(document.getElementById("edat"))
-              var j1nif = document.getElementById("j1nif");
-              var j1email = document.getElementById("j1email");
-              //Enviar a sessio
-              sessionStorage.setItem("j1nom",j1nom);
-              sessionStorage.setItem("j1cognom",j1cognom);
-              sessionStorage.setItem("j1edat",j1edat);
-              sessionStorage.setItem("j1nif",j1nif);
-              sessionStorage.setItem("j1email",j1email);
-              
-              //Jugador 2
-              //Recollir de pantalla
-              var j2nom = document.getElementById("j2nom");
-              var j2cognom = document.getElementById("j2cognom");
-              var j2edat = Number(document.getElementById("edat"))
-              var j2nif = document.getElementById("j2nif");
-              var j2email = document.getElementById("j2email");
-              //Enviar a sessio
-              sessionStorage.setItem("j2nom",j2nom);
-              sessionStorage.setItem("j2cognom",j2cognom);
-              sessionStorage.setItem("j2edat",j2edat);
-              sessionStorage.setItem("j2nif",j2nif);
-              sessionStorage.setItem("j2email",j2email);
+              function desarDades(){
+                  /*Posar en sessió*/
+
+                  //Jugador 1
+                  //Recollir de pantalla
+                  var j1n = document.getElementById("j1nom").value;
+                  var j1c = document.getElementById("j1cognom").value;
+                  var j1e = Number(document.getElementById("j1edat").value)
+                  var j1ni = document.getElementById("j1nif").value;
+                  var j1em = document.getElementById("j1email").value;
+                  //Enviar a sessio
+                  sessionStorage.setItem( "j1nom" , j1n );
+                  sessionStorage.setItem( "j1cognom" , j1c );
+                  sessionStorage.setItem( "j1edat" , j1e );
+                  sessionStorage.setItem( "j1nif" , j1ni );
+                  sessionStorage.setItem( "j1email" , j1em );
+
+                  //Jugador 2
+                  //Recollir de pantalla
+                  var j2nom = document.getElementById("j2nom").value;
+                  var j2cognom = document.getElementById("j2cognom").value;
+                  var j2edat = Number(document.getElementById("j2edat").value)
+                  var j2nif = document.getElementById("j2nif").value;
+                  var j2email = document.getElementById("j2email").value;
+                  //Enviar a sessio
+                  sessionStorage.setItem( "j2nom" , j2nom );
+                  sessionStorage.setItem( "j2cognom" , j2cognom );
+                  sessionStorage.setItem( "j2edat" , j2edat );
+                  sessionStorage.setItem( "j2nif" , j2nif );
+                  sessionStorage.setItem( "j2email" , j2email );
+                  alert("Tot correcte s'han desat els jugadors correctament.");
+            }
               
               /*--------------------------------------------------------------------------*/
           function Comprobar(formulario) 

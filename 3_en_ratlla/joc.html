@@ -15,52 +15,72 @@
         .btn{
             width: 150px;
         }
+        p{
+            text-align: left;
+        }
+        table{
+            width: 100%;
+            height: 100%;
+        }
+        .esquerra_dreta{
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            
+        }
+        .adalt_sota{
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+        }
+        td{
+            height: 150px;
+            width: 150px;
+        }
     </style>
   </head>
-  <body>
+  <body onload="jugadors()">
       <br/>
       <div class="container">
           <legend>A JUGAR =)</legend>
           <br/>
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-3">
                 <span class="label label-success col-xs-12">
                     <legend>Player 1</legend>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>Nom:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>Nom:</b></p>
                         </div>
                         <div class="col-xs-9">
                             <p id="p1nom"></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>Cognoms:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>Cognoms:</b></p>
                         </div>
                         <div class="col-xs-9">
-                            <p id="p1cognoms"></p>
+                            <p id="p1cognom"></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>Edat:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>Edat:</b></p>
                         </div>
                         <div class="col-xs-9">
                             <p id="p1edat"></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>NIF:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>NIF:</b></p>
                         </div>
                         <div class="col-xs-9">
                             <p id="p1nif"></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>Email:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>Email:</b></p>
                         </div>
                         <div class="col-xs-9">
                             <p id="p1email"></p>
@@ -68,45 +88,67 @@
                     </div>
                 </span>
             </div>
-            <div class="col-xs-4"></div>
-            <div class="col-xs-4">
+            <div class="col-xs-6">
+                <div class="table-responsive"> 
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><img src="x150.png"/></td>
+                                <td class="esquerra_dreta"><img src="x150.png"/></td>
+                                <td><img src="x150.png"/></td>
+                            </tr>
+                            <tr>
+                                <td class="adalt_sota"></td>
+                                <td class="adalt_sota esquerra_dreta"></td>
+                                <td class="adalt_sota"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="esquerra_dreta"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-xs-3">
                 <span class="label label-default col-xs-12">
                     <legend>Player 2</legend>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>Nom:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>Nom:</b></p>
                         </div>
                         <div class="col-xs-9">
                             <p id="p2nom"></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>Cognoms:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>Cognoms:</b></p>
                         </div>
                         <div class="col-xs-9">
-                            <p id="p2cognoms"></p>
+                            <p id="p2cognom"></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>Edat:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>Edat:</b></p>
                         </div>
                         <div class="col-xs-9">
                             <p id="p2edat"></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>NIF:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>NIF:</b></p>
                         </div>
                         <div class="col-xs-9">
                             <p id="p2nif"></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-2">
-                            <p><b>Email:</b></p>
+                        <div class="col-xs-3">
+                            <p class="fix"><b>Email:</b></p>
                         </div>
                         <div class="col-xs-9">
                             <p id="p2email"></p>
@@ -115,8 +157,24 @@
                 </span>
             </div>
         </div>
-           
       </div>
+      <script>
+        function jugadors(){
+            /*Jugador 1*/
+            document.getElementById("p1nom").innerHTML = sessionStorage.getItem("j1nom");
+            document.getElementById("p1cognom").innerHTML = sessionStorage.getItem("j1cognom");
+            document.getElementById("p1edat").innerHTML = sessionStorage.getItem("j1edat");
+            document.getElementById("p1nif").innerHTML = sessionStorage.getItem("j1nif");
+            document.getElementById("p1email").innerHTML = sessionStorage.getItem("j1email");
+                
+            /*Jugador 2*/
+            document.getElementById("p2nom").innerHTML = sessionStorage.getItem("j2nom");
+            document.getElementById("p2cognom").innerHTML = sessionStorage.getItem("j2cognom");
+            document.getElementById("p2edat").innerHTML = sessionStorage.getItem("j2edat");
+            document.getElementById("p2nif").innerHTML = sessionStorage.getItem("j2nif");
+            document.getElementById("p2email").innerHTML = sessionStorage.getItem("j2email");
+        }
+      </script>        
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="bootstrap-3/js/bootstrap.min.js"></script>
   </body>
