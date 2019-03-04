@@ -95,6 +95,12 @@
               </div>
           </form>
           <script>
+              var intents = document.cookie;
+              if(intents == "" || intents === NaN || intents == "intents="){
+                    intents = 0;
+              }else{
+                  alert("Intent nº"+Number(intents.slice((intents.length-1),intents.length))+".");
+              }
               
               function desarDades(){
                   /*Posar en sessió*/
@@ -127,6 +133,7 @@
                   sessionStorage.setItem( "j2nif" , j2nif );
                   sessionStorage.setItem( "j2email" , j2email );
                   alert("Tot correcte s'han desat els jugadors correctament.");
+                  document.cookie = "intents="+intents;
             }
               
               /*--------------------------------------------------------------------------*/
@@ -165,6 +172,9 @@ return false;
 }
 return true;
 }
+              
+              /* Cookies */
+              document.cookie = "intents="+(intents++);
           </script>
       </div>
     <script src="http://code.jquery.com/jquery.js"></script>
