@@ -51,6 +51,6 @@ input::placeholder{
     color: #f89191;
 }
 
-h1, h2, h3, p, legend{
+h1, h2, h3, p, legend, label{
     color: white;
 }
