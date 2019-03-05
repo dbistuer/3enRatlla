@@ -17,14 +17,14 @@ table{
 }
 
 .esquerra_dreta{
-    border-left: 5px solid black;
-    border-right: 5px solid black;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
 
 }
 
 .adalt_sota{
-    border-bottom: 5px solid black;
-    border-top: 5px solid black;
+    border-bottom: 5px solid white;
+    border-top: 5px solid white;
 }
 
 td{
@@ -49,4 +49,8 @@ input::placeholder{
     background-color: #ffffbf;
     font-style: oblique;
     color: #f89191;
+}
+
+h1, h2, h3, p, legend{
+    color: white;
 }
