@@ -28,26 +28,42 @@
                   </div>
               </div>
               <br>
+              <div class="row" id="errNom">
+                <div class="col-xs-4 alert alert-danger text-center" id="errNom1" role="alert">
+                    
+                </div>
+                <div class="col-xs-3"></div>
+                <div class="col-xs-4 alert alert-danger text-center" id="errNom2" role="alert">
+                </div>
+              </div>
               <div class="row">
                   <div class="col-xs-2"><label>Nom:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j1nom" placeholder="Escriu el teu nom" "required" >
+                      <input type="text" id="j1nom" placeholder="Escriu el teu nom" "required" onfocusout="majuscules('j1nom')" >
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>Nom:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j2nom" placeholder="Escriu el teu nom" "required" >
+                      <input type="text" id="j2nom" placeholder="Escriu el teu nom" "required" onfocusout="majuscules('j2nom')">
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 alert alert-danger text-center" id="errCognom1" role="alert">
+                </div>
+                <div class="col-xs-3"></div>
+                <div class="col-xs-4 alert alert-danger text-center" id="errCognom2" role="alert">
+                    pepepwergpsfdjhs 
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Cognoms:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j1cognom" placeholder="Escriu el teu cognom" "required" >
+                      <input type="text" id="j1cognom" placeholder="Escriu el teu cognom" "required" onfocusout="majuscules('j1cognom')">
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>Cognoms:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" "required" >
+                      <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" "required" onfocusout="majuscules('j2cognom')">
                   </div>
               </div>
               <div class="row">
@@ -64,12 +80,12 @@
               <div class="row">
                   <div class="col-xs-2"><label>NIF:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j1nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" "required" >
+                      <input type="text" id="j1nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" "required">
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>NIF:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j2nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" "required" >
+                      <input type="text" id="j2nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" "required">
                   </div>
               </div>
               <div class="row">
@@ -133,11 +149,34 @@
                   sessionStorage.setItem( "j2nif" , j2nif );
                   sessionStorage.setItem( "j2email" , j2email );
                   alert("Tot correcte s'han desat els jugadors correctament.");
-                  document.cookie = "intents="+intents;
+                   document.cookie = "intents="+(intents++);
             }
               
+              function majuscules(id) {
+                  document.getElementById(id).style.textTransform = 'uppercase';     
+              }
+              
+              function validacioNomCognoms(){
+                  
+                  switch (null){
+                      case document.getElementById("j2cognom"):
+                          document.getElementById("errCognom2").innerHTML
+                          document.getElementById("j2cognom").focus;
+                          break;
+                      case document.getElementById("j1cognom"):
+                          document.getElementById("j1cognom").focus;
+                          break;
+                      case document.getElementById("j2nom"):
+                          document.getElementById("j2nom").focus;
+                          break;
+                      case document.getElementById("j1nom"):
+                          document.getElementById("j1nom").focus;
+                          break;    
+                  }
+              }
+              
               /*--------------------------------------------------------------------------*/
-          function Comprobar(formulario) 
+function Comprobar(formulario) 
 {   
 var nombreAp=document.getElementById('nom').value;
 var eMail=document.getElementById('email').value;
@@ -172,9 +211,8 @@ return false;
 }
 return true;
 }
-              
-              /* Cookies */
-              document.cookie = "intents="+(intents++);
+
+             
           </script>
       </div>
     <script src="https://code.jquery.com/jquery.js"></script>
