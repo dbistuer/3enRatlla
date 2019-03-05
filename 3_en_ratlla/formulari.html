@@ -28,85 +28,69 @@
                   </div>
               </div>
               <br>
-              <div class="row" id="errNom">
-                <div class="col-xs-4 alert alert-danger text-center" id="errNom1" role="alert">
-                    
-                </div>
-                <div class="col-xs-3"></div>
-                <div class="col-xs-4 alert alert-danger text-center" id="errNom2" role="alert">
-                </div>
-              </div>
               <div class="row">
                   <div class="col-xs-2"><label>Nom:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j1nom" placeholder="Escriu el teu nom" "required" onfocusout="majuscules('j1nom')" >
+                      <input type="text" id="j1nom" placeholder="Escriu el teu nom" title="El nom no pot ser vuit" tabindex="1" onfocusout="validacio('j1nom')" required><!--majuscules('j1nom')-->
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>Nom:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j2nom" placeholder="Escriu el teu nom" "required" onfocusout="majuscules('j2nom')">
-                  </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-4 alert alert-danger text-center" id="errCognom1" role="alert">
-                </div>
-                <div class="col-xs-3"></div>
-                <div class="col-xs-4 alert alert-danger text-center" id="errCognom2" role="alert">
-                    pepepwergpsfdjhs 
+                      <input type="text" id="j2nom" placeholder="Escriu el teu nom" title="El nom no pot ser vuit" tabindex="6" onfocusout="validacio('j2nom')" required>
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Cognoms:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j1cognom" placeholder="Escriu el teu cognom" "required" onfocusout="majuscules('j1cognom')">
+                      <input type="text" id="j1cognom" placeholder="Escriu el teu cognom" title="El cognom no pot ser vuit" tabindex="2" onfocusout="validacio('j1cognom')" required>
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>Cognoms:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" "required" onfocusout="majuscules('j2cognom')">
+                      <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" title="El cognom no pot ser vuit" tabindex="7" onfocusout="validacio('j2cognom')" required>
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Edat:</label></div>
                   <div class="col-xs-1">
-                      <input type="number" id="j1edat" min="3" max="102" placeholder="Escriu l'edat" "required" >
+                      <input type="number" id="j1edat" min="0" max="105" title="L'edat no pot ser major de 105 ni menor que 0" tabindex="3" placeholder="Escriu l'edat" onfocusout="validacio('j1edat')" required>
                   </div>
                   <div class="col-xs-4"></div>
                   <div class="col-xs-2"><label>Edat:</label></div>
                   <div class="col-xs-1">
-                      <input type="number" id="j2edat" min="3" max="102" placeholder="Escriu l'edat" "required" >
+                      <input type="number" id="j2edat" min="0" max="105" title="L'edat no pot ser major de 105 ni menor que 0" tabindex="8" placeholder="Escriu l'edat" onfocusout="validacio('j2edat')" required>
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>NIF:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j1nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" "required">
+                      <input type="text" id="j1nif" title="El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" tabindex="4" required>
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>NIF:</label></div>
                   <div class="col-xs-2">
-                      <input type="text" id="j2nif" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" "required">
+                      <input type="text" id="j2nif" title="El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" tabindex="9" required>
                   </div>
               </div>
               <div class="row">
                   <div class="col-xs-2"><label>Email:</label></div>
                   <div class="col-xs-2">
-                      <input type="email" id="j1email" placeholder="Escriu un email valid" "required" >
+                      <input type="email" id="j1email" placeholder="Escriu un email valid" tabindex="5" required >
                   </div>
                   <div class="col-xs-3"></div>
                   <div class="col-xs-2"><label>Email:</label></div>
                   <div class="col-xs-2">
-                      <input type="email" id="j2email" placeholder="Escriu un email valid" "required" >
+                      <input type="email" id="j2email" placeholder="Escriu un email valid" tabindex="10" required >
                   </div>
               </div>
               <br/>
               <div class="row">
                   <div class="col-xs-1">
-                    <input type="reset" class="btn btn-danger" value="Borrar">
+                    <input type="reset" class="btn btn-danger" tabindex="11" value="Borrar">
                   </div>
                   <div class="col-xs-8"></div>
                   <div class="col-xs-1">
-                    <input type="submit" class="btn btn-success" value="Enviar" onclick="desarDades()">
+                    <input type="submit" class="btn btn-success" value="Enviar" tabindex="12" onsubmit="desarDades()">
                   </div>
               </div>
           </form>
@@ -156,24 +140,151 @@
                   document.getElementById(id).style.textTransform = 'uppercase';     
               }
               
-              function validacioNomCognoms(){
+              function validacio(id){
                   
-                  switch (null){
-                      case document.getElementById("j2cognom"):
-                          document.getElementById("errCognom2").innerHTML
-                          document.getElementById("j2cognom").focus;
+                  switch (id){
+                      case "j2cognom":
+                          if (document.getElementById("j2cognom").value == "")
+                            document.getElementById("j2cognom").focus();
+                          else majuscules(id);
                           break;
-                      case document.getElementById("j1cognom"):
-                          document.getElementById("j1cognom").focus;
+                      case "j1cognom":
+                          if (document.getElementById("j1cognom").value == "")
+                            document.getElementById("j1cognom").focus();
+                          else majuscules(id);
                           break;
-                      case document.getElementById("j2nom"):
-                          document.getElementById("j2nom").focus;
+                      case "j2nom":
+                          if (document.getElementById("j2nom").value == "")
+                            document.getElementById("j2nom").focus();
+                          else majuscules(id);
                           break;
-                      case document.getElementById("j1nom"):
-                          document.getElementById("j1nom").focus;
-                          break;    
+                      case "j1nom":
+                          if (document.getElementById("j1nom").value == "")
+                            document.getElementById("j1nom").focus();
+                          else majuscules(id);
+                          break;
+                      case "j1edat":
+                          if (document.getElementById("j1edat").value == "")
+                            document.getElementById("j1edat").focus();
+                          else if(Number(document.getElementById("j1edat").value) < 106 && Number(document.getElementById("j1edat").value) > 0 ){
+                              break;
+                          }
+                          break;
+                      case "j2edat":
+                          if (document.getElementById("j2edat").value == "")
+                            document.getElementById("j2edat").focus();
+                          else if(Number(document.getElementById("j2edat").value) < 106 && Number(document.getElementById("j2edat").value) > 0 ){
+                              break;
+                          }
+                          break;
+                      case "j1nif":
+                          break;
+                      case "j2nif":
+                          break;
                   }
               }
+              
+              function focoPerId(id){
+                  document.getElementById(id).focus();
+              }
+              
+              // Missatges d'error customitzats de les validacions del formulari
+              
+                var j1n = document.getElementById("j1nom");
+                var j1c = document.getElementById("j1cognom");
+                var j1e = document.getElementById("j1edat");
+                var j1ni = document.getElementById("j1nif");
+                var j1em = document.getElementById("j1email");
+              
+                var j2n = document.getElementById("j2nom");
+                var j2c = document.getElementById("j2cognom");
+                var j2e = document.getElementById("j2edat");
+                var j2ni = document.getElementById("j2nif");
+                var j2em = document.getElementById("j2email");
+                
+              
+                j1n.addEventListener('invalid', function(e) {
+                    if(j1n.validity.valueMissing){
+                        e.target.setCustomValidity("El nom no pot ser vuit");
+                        focoPerId("j1nom");
+                    } else if(!j1n.validity.valid) {
+                        e.target.setCustomValidity(""); 
+                    } 
+                }, false);
+              
+                j2n.addEventListener('invalid', function(e) {
+                    if(j2n.validity.valueMissing){
+                        e.target.setCustomValidity("El nom no pot ser vuit"); 
+                        focoPerId("j2nom");
+                    } else if(!j2n.validity.valid) {
+                        e.target.setCustomValidity(""); 
+                    } 
+                }, false);
+              
+                j1c.addEventListener('invalid', function(e) {
+                    if(j1c.validity.valueMissing){
+                        e.target.setCustomValidity("El cognom no pot ser vuit");
+                        focoPerId("j1cognom");
+                    } else if(!j1c.validity.valid) {
+                        e.target.setCustomValidity(""); 
+                    } 
+                }, false);
+              
+                j2c.addEventListener('invalid', function(e) {
+                    if(j2c.validity.valueMissing){
+                        e.target.setCustomValidity("El cognom no pot ser vuit");
+                        focoPerId("j2cognom");
+                    } else if(!j2c.validity.valid) {
+                        e.target.setCustomValidity(""); 
+                    } 
+                }, false);
+              
+                j1e.addEventListener('invalid', function(e) {
+                    if(j1e.validity.valueMissing){
+                        e.target.setCustomValidity("L'edat no pot ser vuida");
+                        focoPerId("j1edat");
+                    } else if(j1e.validity.rangeOverflow) {
+                        e.target.setCustomValidity("L'edat no pot ser major de 105 ni menor que 0");
+                        focoPerId("j1edat");
+                    } else if(j1e.validity.rangeUnderflow) {
+                        e.target.setCustomValidity("L'edat no pot ser major de 105 ni menor que 0");
+                        focoPerId("j1edat");
+                    }
+                }, false);
+              
+                j2e.addEventListener ('invalid', function(e) {
+                    if(j2e.validity.valueMissing){
+                        e.target.setCustomValidity("L'edat no pot ser vuida");
+                        focoPerId("j2edat");
+                    } else if(j2e.validity.rangeOverflow) {
+                        e.target.setCustomValidity("L'edat no pot ser major de 105 ni menor que 0");
+                        focoPerId("j2edat");
+                    } else if(j2e.validity.rangeUnderflow) {
+                        e.target.setCustomValidity("L'edat no pot ser major de 105 ni menor que 0");
+                        focoPerId("j2edat");
+                    }
+                }, false);
+              
+                j1ni.addEventListener('invalid', function(e) {
+                    if(j1ni.validity.valueMissing){
+                        e.target.setCustomValidity("El nif no pot ser vuit");
+                        focoPerId("j1nif");
+                    } else if(!j1ni.validity.valid) {
+                        e.target.setCustomValidity("El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)");
+                        focoPerId("j1nif");
+                    } 
+                }, false);
+              
+                j2ni.addEventListener('invalid', function(e) {
+                    if(j2ni.validity.valueMissing){
+                        e.target.setCustomValidity("El nif no pot ser vuit");
+                        focoPerId("j2nif");
+                    } else if(!j2ni.validity.valid) {
+                        e.target.setCustomValidity("El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)");
+                        focoPerId("j2nif");
+                    } 
+                }, false);
+              
               
               /*--------------------------------------------------------------------------*/
 function Comprobar(formulario) 
