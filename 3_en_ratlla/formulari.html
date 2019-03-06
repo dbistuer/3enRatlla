@@ -126,44 +126,47 @@
               var primerCop = 0;
               
               var intents = document.cookie;
-              if(intents == "" || intents === NaN || intents == "intents="){
+              if(intents == "" || intents === NaN || intents == "intents=" || intents == "intents=NaN"){
                     intents = 0;
               }else{
                   alert("Intent nº"+Number(intents.slice((intents.length-1),intents.length))+".");
               }
               
               function desarDades(){
-                  /*Posar en sessió*/
+                  
+                  if(confirm("Vols desar?")){
+                      /*Posar en sessió*/
 
-                  //Jugador 1
-                  //Recollir de pantalla
-                  var j1n = document.getElementById("j1nom").value;
-                  var j1c = document.getElementById("j1cognom").value;
-                  var j1e = Number(document.getElementById("j1edat").value)
-                  var j1ni = document.getElementById("j1nif").value;
-                  var j1em = document.getElementById("j1email").value;
-                  //Enviar a sessio
-                  sessionStorage.setItem( "j1nom" , j1n );
-                  sessionStorage.setItem( "j1cognom" , j1c );
-                  sessionStorage.setItem( "j1edat" , j1e );
-                  sessionStorage.setItem( "j1nif" , j1ni );
-                  sessionStorage.setItem( "j1email" , j1em );
+                      //Jugador 1
+                      //Recollir de pantalla
+                      var j1n = document.getElementById("j1nom").value;
+                      var j1c = document.getElementById("j1cognom").value;
+                      var j1e = Number(document.getElementById("j1edat").value)
+                      var j1ni = document.getElementById("j1nif").value;
+                      var j1em = document.getElementById("j1email").value;
+                      //Enviar a sessio
+                      sessionStorage.setItem( "j1nom" , j1n );
+                      sessionStorage.setItem( "j1cognom" , j1c );
+                      sessionStorage.setItem( "j1edat" , j1e );
+                      sessionStorage.setItem( "j1nif" , j1ni );
+                      sessionStorage.setItem( "j1email" , j1em );
 
-                  //Jugador 2
-                  //Recollir de pantalla
-                  var j2nom = document.getElementById("j2nom").value;
-                  var j2cognom = document.getElementById("j2cognom").value;
-                  var j2edat = Number(document.getElementById("j2edat").value)
-                  var j2nif = document.getElementById("j2nif").value;
-                  var j2email = document.getElementById("j2email").value;
-                  //Enviar a sessio
-                  sessionStorage.setItem( "j2nom" , j2nom );
-                  sessionStorage.setItem( "j2cognom" , j2cognom );
-                  sessionStorage.setItem( "j2edat" , j2edat );
-                  sessionStorage.setItem( "j2nif" , j2nif );
-                  sessionStorage.setItem( "j2email" , j2email );
-                  alert("Tot correcte s'han desat els jugadors correctament.");
-                   document.cookie = "intents="+(intents++);
+                      //Jugador 2
+                      //Recollir de pantalla
+                      var j2nom = document.getElementById("j2nom").value;
+                      var j2cognom = document.getElementById("j2cognom").value;
+                      var j2edat = Number(document.getElementById("j2edat").value)
+                      var j2nif = document.getElementById("j2nif").value;
+                      var j2email = document.getElementById("j2email").value;
+                      //Enviar a sessio
+                      sessionStorage.setItem( "j2nom" , j2nom );
+                      sessionStorage.setItem( "j2cognom" , j2cognom );
+                      sessionStorage.setItem( "j2edat" , j2edat );
+                      sessionStorage.setItem( "j2nif" , j2nif );
+                      sessionStorage.setItem( "j2email" , j2email );
+                      alert("Tot correcte s'han desat els jugadors correctament.");
+                       
+                  }
             }
               
               function majuscules(id) {
@@ -193,9 +196,15 @@
               }
               
               function focoPerId(id){
-                  if(primerCop == 0)
+                  if(primerCop == 0){
                     document.getElementById(id).focus();
+                    intents = Number(document.cookie.slice(document.cookie.length-1,document.cookie.length));    
+                    intents++;
+                    document.cookie = "intents="+intents;
+                    alert("Intent nº"+intents+".");
+                  }
                   primerCop++;
+                  
               }
               
               // Missatges d'error customitzats de les validacions del formulari
