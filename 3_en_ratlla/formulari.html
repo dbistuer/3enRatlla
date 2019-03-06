@@ -19,17 +19,15 @@
           <legend><b>Dades dels jugadors:</b></legend>
           <form action="joc.html" name="jugadors" id="jugadors" method="get">
               <div class="row">
-                  <div class="col-xs-5">
-                      <h2><span class="label label-primary col-xs-12">Jugador 1</span></h2>
-                  </div>
-                  <div class="col-xs-2"></div>
-                  <div class="col-xs-5">
-                      <h2><span class="label label-danger col-xs-12">Jugador 2</span></h2>
-                  </div>
-              </div>
-              <br>
-              <div class="row">
-                  <div class="row col-xs-4">
+                  <div class="row col-sm-5 col-xs-12">
+                      <div class="row">
+                          <div class="col-xs-1 col-sm-0"></div>
+                          <div class="col-xs-10 col-sm-12">
+                            <h2><span class="label label-primary col-xs-12">Jugador 1</span></h2>
+                          </div>
+                          <div class="col-xs-1 col-sm-0"></div>
+                      </div>
+                      <br>
                       <div class="row">
                           <div class="col-xs-1"></div>
                           <div class="col-xs-5"><label>Nom:</label></div>
@@ -66,38 +64,46 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-xs-4"></div>
-                  <div class="row col-xs-4">
+                  <div class="col-xs-2"></div>
+                  <div class="row col-sm-5 col-xs-12">
                       <div class="row">
-                          
+                          <div class="col-xs-1 col-sm-0"></div>
+                          <div class="col-xs-10 col-sm-12">
+                            <h2><span class="label label-danger col-xs-12">Jugador 2</span></h2>
+                          </div>
+                          <div class="col-xs-1 col-sm-0"></div>
+                      </div>
+                      <br>
+                      <div class="row">
+                          <div class="col-xs-1 col-sm-0"></div>
                           <div class="col-xs-5"><label>Nom:</label></div>
                           <div class="col-xs-4">
                               <input type="text" id="j2nom" placeholder="Escriu el teu nom" title="El nom no pot ser vuit" tabindex="6" onfocusout="validacio('j2nom')" required>
                           </div>
                       </div>
                       <div class="row">
-                          
+                          <div class="col-xs-1 col-sm-0"></div>
                           <div class="col-xs-5"><label>Cognoms:</label></div>
                           <div class="col-xs-4">
                               <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" title="El cognom no pot ser vuit" tabindex="7" onfocusout="validacio('j2cognom')" required>
                           </div>
                       </div>
                       <div class="row">
-                          
+                          <div class="col-xs-1 col-sm-0"></div>
                           <div class="col-xs-5"><label>Edat:</label></div>
                           <div class="col-xs-4">
                               <input type="number" id="j2edat" min="0" max="105" title="L'edat no pot ser major de 105 ni menor que 0" tabindex="8" placeholder="Escriu l'edat" onfocusout="validacio('j2edat')" required>
                           </div>
                       </div>
                       <div class="row">
-                          
+                          <div class="col-xs-1 col-sm-0"></div>
                           <div class="col-xs-5"><label>NIF:</label></div>
                           <div class="col-xs-4">
                               <input type="text" id="j2nif" title="El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" tabindex="9" required>
                           </div>
                       </div>
                       <div class="row">
-                          
+                          <div class="col-xs-1 col-sm-0"></div>
                           <div class="col-xs-5"><label>Email:</label></div>
                           <div class="col-xs-4">
                               <input type="email" id="j2email" placeholder="Escriu un email valid" tabindex="10" required >
@@ -110,13 +116,15 @@
                   <div class="col-xs-1">
                     <input type="reset" class="btn btn-danger" tabindex="11" value="Borrar">
                   </div>
-                  <div class="col-xs-8"></div>
+                  <div class="col-sm-8 col-xs-5"></div>
                   <div class="col-xs-1">
                     <input type="submit" class="btn btn-success" value="Enviar" tabindex="12" onsubmit="desarDades()">
                   </div>
               </div>
           </form>
           <script>
+              var primerCop = 0;
+              
               var intents = document.cookie;
               if(intents == "" || intents === NaN || intents == "intents="){
                     intents = 0;
@@ -166,30 +174,28 @@
                   
                   switch (id){
                       case "j2cognom":
-                          if (document.getElementById("j2cognom").value == "")
-                            document.getElementById("j2cognom").focus();
-                          else majuscules(id);
+                          if (document.getElementById("j2cognom").value != "")
+                            majuscules(id);
                           break;
                       case "j1cognom":
-                          if (document.getElementById("j1cognom").value == "")
-                            document.getElementById("j1cognom").focus();
-                          else majuscules(id);
+                          if (document.getElementById("j1cognom").value != "")
+                            majuscules(id);
                           break;
                       case "j2nom":
-                          if (document.getElementById("j2nom").value == "")
-                            document.getElementById("j2nom").focus();
-                          else majuscules(id);
+                          if (document.getElementById("j2nom").value != "")
+                            majuscules(id);
                           break;
                       case "j1nom":
-                          if (document.getElementById("j1nom").value == "")
-                            document.getElementById("j1nom").focus();
-                          else majuscules(id);
+                          if (document.getElementById("j1nom").value != "")
+                            majuscules(id);
                           break;
                   }
               }
               
               function focoPerId(id){
-                  document.getElementById(id).focus();
+                  if(primerCop == 0)
+                    document.getElementById(id).focus();
+                  primerCop++;
               }
               
               // Missatges d'error customitzats de les validacions del formulari
@@ -216,7 +222,7 @@
                     } 
                 }, false);
               
-                 j1c.addEventListener('invalid', function(e) {
+                j1c.addEventListener('invalid', function(e) {
                     if(j1c.validity.valueMissing){
                         e.target.setCustomValidity("El cognom no pot ser vuit");
                         focoPerId("j1cognom");
@@ -248,7 +254,17 @@
                     } 
                 }, false);
               
+                j1em.addEventListener('invalid', function(e){
+                    if(j1em.validity.valueMissing){
+                       e.target.setCustomValidity("L'email no pot ser vuit");
+                       focoPerId("j1email");
+                    } else if(j1em.validity.typeMismatch){
+                        focoPerId("j1email");
+                    }
+                }, false);
                 
+              
+              
                 j2n.addEventListener('invalid', function(e) {
                     if(j2n.validity.valueMissing){
                         e.target.setCustomValidity("El nom no pot ser vuit"); 
@@ -290,6 +306,14 @@
                     } 
                 }, false);
               
+                j2em.addEventListener('invalid', function(e){
+                    if(j2em.validity.valueMissing){
+                       e.target.setCustomValidity("L'email no pot ser vuit");
+                       focoPerId("j2email");
+                    } else if(j1em.validity.typeMismatch){
+                        focoPerId("j1email");
+                    }
+                }, false);
               
               /*--------------------------------------------------------------------------*/
 function Comprobar(formulario) 
@@ -327,6 +351,7 @@ return false;
 }
 return true;
 }
+              primerCop = 0;
 
              
           </script>
