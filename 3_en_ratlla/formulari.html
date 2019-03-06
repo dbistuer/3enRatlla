@@ -185,24 +185,6 @@
                             document.getElementById("j1nom").focus();
                           else majuscules(id);
                           break;
-                      case "j1edat":
-                          if (document.getElementById("j1edat").value == "")
-                            document.getElementById("j1edat").focus();
-                          else if(Number(document.getElementById("j1edat").value) < 106 && Number(document.getElementById("j1edat").value) > 0 ){
-                              break;
-                          }
-                          break;
-                      case "j2edat":
-                          if (document.getElementById("j2edat").value == "")
-                            document.getElementById("j2edat").focus();
-                          else if(Number(document.getElementById("j2edat").value) < 106 && Number(document.getElementById("j2edat").value) > 0 ){
-                              break;
-                          }
-                          break;
-                      case "j1nif":
-                          break;
-                      case "j2nif":
-                          break;
                   }
               }
               
@@ -234,16 +216,7 @@
                     } 
                 }, false);
               
-                j2n.addEventListener('invalid', function(e) {
-                    if(j2n.validity.valueMissing){
-                        e.target.setCustomValidity("El nom no pot ser vuit"); 
-                        focoPerId("j2nom");
-                    } else if(!j2n.validity.valid) {
-                        e.target.setCustomValidity(""); 
-                    } 
-                }, false);
-              
-                j1c.addEventListener('invalid', function(e) {
+                 j1c.addEventListener('invalid', function(e) {
                     if(j1c.validity.valueMissing){
                         e.target.setCustomValidity("El cognom no pot ser vuit");
                         focoPerId("j1cognom");
@@ -251,16 +224,7 @@
                         e.target.setCustomValidity(""); 
                     } 
                 }, false);
-              
-                j2c.addEventListener('invalid', function(e) {
-                    if(j2c.validity.valueMissing){
-                        e.target.setCustomValidity("El cognom no pot ser vuit");
-                        focoPerId("j2cognom");
-                    } else if(!j2c.validity.valid) {
-                        e.target.setCustomValidity(""); 
-                    } 
-                }, false);
-              
+                
                 j1e.addEventListener('invalid', function(e) {
                     if(j1e.validity.valueMissing){
                         e.target.setCustomValidity("L'edat no pot ser vuida");
@@ -273,6 +237,35 @@
                         focoPerId("j1edat");
                     }
                 }, false);
+              
+                j1ni.addEventListener('invalid', function(e) {
+                    if(j1ni.validity.valueMissing){
+                        e.target.setCustomValidity("El nif no pot ser vuit");
+                        focoPerId("j1nif");
+                    } else if(!j1ni.validity.patternMismatch) {
+                        e.target.setCustomValidity("El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)");
+                        focoPerId("j1nif");
+                    } 
+                }, false);
+              
+                
+                j2n.addEventListener('invalid', function(e) {
+                    if(j2n.validity.valueMissing){
+                        e.target.setCustomValidity("El nom no pot ser vuit"); 
+                        focoPerId("j2nom");
+                    } else if(!j2n.validity.valid) {
+                        e.target.setCustomValidity(""); 
+                    } 
+                }, false);
+              
+                j2c.addEventListener('invalid', function(e) {
+                    if(j2c.validity.valueMissing){
+                        e.target.setCustomValidity("El cognom no pot ser vuit");
+                        focoPerId("j2cognom");
+                    } else if(!j2c.validity.valid) {
+                        e.target.setCustomValidity(""); 
+                    } 
+                }, false); 
               
                 j2e.addEventListener ('invalid', function(e) {
                     if(j2e.validity.valueMissing){
@@ -287,21 +280,11 @@
                     }
                 }, false);
               
-                j1ni.addEventListener('invalid', function(e) {
-                    if(j1ni.validity.valueMissing){
-                        e.target.setCustomValidity("El nif no pot ser vuit");
-                        focoPerId("j1nif");
-                    } else if(!j1ni.validity.valid) {
-                        e.target.setCustomValidity("El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)");
-                        focoPerId("j1nif");
-                    } 
-                }, false);
-              
                 j2ni.addEventListener('invalid', function(e) {
                     if(j2ni.validity.valueMissing){
                         e.target.setCustomValidity("El nif no pot ser vuit");
                         focoPerId("j2nif");
-                    } else if(!j2ni.validity.valid) {
+                    } else if(!j2ni.validity.patternMismatch) {
                         e.target.setCustomValidity("El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)");
                         focoPerId("j2nif");
                     } 
