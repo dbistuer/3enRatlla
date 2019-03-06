@@ -29,58 +29,80 @@
               </div>
               <br>
               <div class="row">
-                  <div class="col-xs-2"><label>Nom:</label></div>
-                  <div class="col-xs-2">
-                      <input type="text" id="j1nom" placeholder="Escriu el teu nom" title="El nom no pot ser vuit" tabindex="1" onfocusout="validacio('j1nom')" required><!--majuscules('j1nom')-->
-                  </div>
-                  <div class="col-xs-3"></div>
-                  <div class="col-xs-2"><label>Nom:</label></div>
-                  <div class="col-xs-2">
-                      <input type="text" id="j2nom" placeholder="Escriu el teu nom" title="El nom no pot ser vuit" tabindex="6" onfocusout="validacio('j2nom')" required>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-xs-2"><label>Cognoms:</label></div>
-                  <div class="col-xs-2">
-                      <input type="text" id="j1cognom" placeholder="Escriu el teu cognom" title="El cognom no pot ser vuit" tabindex="2" onfocusout="validacio('j1cognom')" required>
-                  </div>
-                  <div class="col-xs-3"></div>
-                  <div class="col-xs-2"><label>Cognoms:</label></div>
-                  <div class="col-xs-2">
-                      <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" title="El cognom no pot ser vuit" tabindex="7" onfocusout="validacio('j2cognom')" required>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-xs-2"><label>Edat:</label></div>
-                  <div class="col-xs-1">
-                      <input type="number" id="j1edat" min="0" max="105" title="L'edat no pot ser major de 105 ni menor que 0" tabindex="3" placeholder="Escriu l'edat" onfocusout="validacio('j1edat')" required>
+                  <div class="row col-xs-4">
+                      <div class="row">
+                          <div class="col-xs-1"></div>
+                          <div class="col-xs-5"><label>Nom:</label></div>
+                          <div class="col-xs-4">
+                              <input type="text" id="j1nom" placeholder="Escriu el teu nom" title="El nom no pot ser vuit" tabindex="1" onfocusout="validacio('j1nom')" required>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-1"></div>
+                          <div class="col-xs-5"><label>Cognoms:</label></div>
+                          <div class="col-xs-4">
+                              <input type="text" id="j1cognom" placeholder="Escriu el teu cognom" title="El cognom no pot ser vuit" tabindex="2" onfocusout="validacio('j1cognom')" required>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-1"></div>
+                          <div class="col-xs-5"><label>Edat:</label></div>
+                          <div class="col-xs-4">
+                              <input type="number" id="j1edat" min="0" max="105" title="L'edat no pot ser major de 105 ni menor que 0" tabindex="3" placeholder="Escriu l'edat" onfocusout="validacio('j1edat')" required>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-1"></div>
+                          <div class="col-xs-5"><label>NIF:</label></div>
+                          <div class="col-xs-4">
+                              <input type="text" id="j1nif" title="El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" tabindex="4" required>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-1"></div>
+                          <div class="col-xs-5"><label>Email:</label></div>
+                          <div class="col-xs-4">
+                              <input type="email" id="j1email" placeholder="Escriu un email valid" tabindex="5" required >
+                          </div>
+                      </div>
                   </div>
                   <div class="col-xs-4"></div>
-                  <div class="col-xs-2"><label>Edat:</label></div>
-                  <div class="col-xs-1">
-                      <input type="number" id="j2edat" min="0" max="105" title="L'edat no pot ser major de 105 ni menor que 0" tabindex="8" placeholder="Escriu l'edat" onfocusout="validacio('j2edat')" required>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-xs-2"><label>NIF:</label></div>
-                  <div class="col-xs-2">
-                      <input type="text" id="j1nif" title="El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" tabindex="4" required>
-                  </div>
-                  <div class="col-xs-3"></div>
-                  <div class="col-xs-2"><label>NIF:</label></div>
-                  <div class="col-xs-2">
-                      <input type="text" id="j2nif" title="El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" tabindex="9" required>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-xs-2"><label>Email:</label></div>
-                  <div class="col-xs-2">
-                      <input type="email" id="j1email" placeholder="Escriu un email valid" tabindex="5" required >
-                  </div>
-                  <div class="col-xs-3"></div>
-                  <div class="col-xs-2"><label>Email:</label></div>
-                  <div class="col-xs-2">
-                      <input type="email" id="j2email" placeholder="Escriu un email valid" tabindex="10" required >
+                  <div class="row col-xs-4">
+                      <div class="row">
+                          
+                          <div class="col-xs-5"><label>Nom:</label></div>
+                          <div class="col-xs-4">
+                              <input type="text" id="j2nom" placeholder="Escriu el teu nom" title="El nom no pot ser vuit" tabindex="6" onfocusout="validacio('j2nom')" required>
+                          </div>
+                      </div>
+                      <div class="row">
+                          
+                          <div class="col-xs-5"><label>Cognoms:</label></div>
+                          <div class="col-xs-4">
+                              <input type="text" id="j2cognom" placeholder="Escriu el teu cognom" title="El cognom no pot ser vuit" tabindex="7" onfocusout="validacio('j2cognom')" required>
+                          </div>
+                      </div>
+                      <div class="row">
+                          
+                          <div class="col-xs-5"><label>Edat:</label></div>
+                          <div class="col-xs-4">
+                              <input type="number" id="j2edat" min="0" max="105" title="L'edat no pot ser major de 105 ni menor que 0" tabindex="8" placeholder="Escriu l'edat" onfocusout="validacio('j2edat')" required>
+                          </div>
+                      </div>
+                      <div class="row">
+                          
+                          <div class="col-xs-5"><label>NIF:</label></div>
+                          <div class="col-xs-4">
+                              <input type="text" id="j2nif" title="El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)" pattern="[0-9]{8}-[A-Z]" placeholder="Escriu el NIF" tabindex="9" required>
+                          </div>
+                      </div>
+                      <div class="row">
+                          
+                          <div class="col-xs-5"><label>Email:</label></div>
+                          <div class="col-xs-4">
+                              <input type="email" id="j2email" placeholder="Escriu un email valid" tabindex="10" required >
+                          </div>
+                      </div>
                   </div>
               </div>
               <br/>
