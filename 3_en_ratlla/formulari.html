@@ -118,7 +118,7 @@
                   </div>
                   <div class="col-sm-8 col-xs-5"></div>
                   <div class="col-xs-1">
-                    <input type="submit" class="btn btn-success" value="Enviar" tabindex="12" onsubmit="desarDades()">
+                    <input type="button" class="btn btn-success" value="Enviar" tabindex="12" onclick="desarDades()" onsubmit="desarDades()">
                   </div>
               </div>
           </form>
@@ -165,6 +165,7 @@
                       sessionStorage.setItem( "j2nif" , j2nif );
                       sessionStorage.setItem( "j2email" , j2email );
                       alert("Tot correcte s'han desat els jugadors correctament.");
+                      window.location.href = 'joc.html';
                        
                   }
             }
@@ -244,6 +245,8 @@
                     if(j1e.validity.valueMissing){
                         e.target.setCustomValidity("L'edat no pot ser vuida");
                         focoPerId("j1edat");
+                    }else if(!j1e.validity.valueMissing) {
+                        e.target.setCustomValidity("");   
                     } else if(j1e.validity.rangeOverflow) {
                         e.target.setCustomValidity("L'edat no pot ser major de 105 ni menor que 0");
                         focoPerId("j1edat");
@@ -257,7 +260,9 @@
                     if(j1ni.validity.valueMissing){
                         e.target.setCustomValidity("El nif no pot ser vuit");
                         focoPerId("j1nif");
-                    } else if(!j1ni.validity.patternMismatch) {
+                    } else 
+                        e.target.setCustomValidity("");
+                    if(j1ni.validity.patternMismatch) {
                         e.target.setCustomValidity("El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)");
                         focoPerId("j1nif");
                     } 
@@ -267,7 +272,9 @@
                     if(j1em.validity.valueMissing){
                        e.target.setCustomValidity("L'email no pot ser vuit");
                        focoPerId("j1email");
-                    } else if(j1em.validity.typeMismatch){
+                    } else 
+                        e.target.setCustomValidity("");    
+                    if(j1em.validity.typeMismatch){
                         focoPerId("j1email");
                     }
                 }, false);
@@ -296,7 +303,9 @@
                     if(j2e.validity.valueMissing){
                         e.target.setCustomValidity("L'edat no pot ser vuida");
                         focoPerId("j2edat");
-                    } else if(j2e.validity.rangeOverflow) {
+                    }else 
+                        e.target.setCustomValidity("");   
+                    if(j2e.validity.rangeOverflow) {
                         e.target.setCustomValidity("L'edat no pot ser major de 105 ni menor que 0");
                         focoPerId("j2edat");
                     } else if(j2e.validity.rangeUnderflow) {
@@ -309,7 +318,9 @@
                     if(j2ni.validity.valueMissing){
                         e.target.setCustomValidity("El nif no pot ser vuit");
                         focoPerId("j2nif");
-                    } else if(!j2ni.validity.patternMismatch) {
+                    } else 
+                        e.target.setCustomValidity("");    
+                    if(j2ni.validity.patternMismatch) {
                         e.target.setCustomValidity("El nif ha de contindre 8 numeros un '-' i una lletra en majuscules (00000000-A)");
                         focoPerId("j2nif");
                     } 
@@ -319,47 +330,13 @@
                     if(j2em.validity.valueMissing){
                        e.target.setCustomValidity("L'email no pot ser vuit");
                        focoPerId("j2email");
-                    } else if(j1em.validity.typeMismatch){
+                    } else 
+                        e.target.setCustomValidity("");
+                    if(j1em.validity.typeMismatch){
                         focoPerId("j1email");
                     }
                 }, false);
               
-              /*--------------------------------------------------------------------------*/
-function Comprobar(formulario) 
-{   
-var nombreAp=document.getElementById('nom').value;
-var eMail=document.getElementById('email').value;
-var Asunto=document.getElementById('cognom').value;
-var Mensaje=document.getElementById('email').value;
-if (nombreAp.length==0) 
-{
-var errorNombre=document.createElement('p');
-errorNombre.innerHTML= 'No escribiste tu nombre';                   
-document.getElementById("Comentarios").appendChild(errorNombre);
-return false;
-}
-if (eMail.length==0) 
-{
-var erroremail=document.createElement('p');
-erroremail.innerHTML='No escribiste tu email';
-document.getElementById("Comentarios").appendChild(erroremail);
-return false;
-}
-if (Asunto.length==0) 
-{
-var errorAsunto=document.createElement("p");
-errorAsunto.innerHTML='No escribiste el asunto';            document.getElementById("Comentarios").appendChild(errorAsunto);
-return false;
-}
-if (Mensaje.length==0) 
-{   
-var errorMensaje=document.createElement("p");
-errorMensaje.innerHTML='No escribiste el mensaje';
-document.getElementById("Comentarios").appendChild(errorMensaje);   
-return false;
-}
-return true;
-}
               primerCop = 0;
 
              
